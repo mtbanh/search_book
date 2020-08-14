@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SavedResults from "../components/savedResults";
+import { SavedResults, SavedItem } from "../components/savedResults";
 import Nav from "../components/nav";
+import DeleteBtn from "../components/deleteBtn"
 import Jumbotron from "../components/jumbotron";
 import API from "../utils/API";
 
