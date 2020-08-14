@@ -6,5 +6,16 @@ import axios from "axios";
 export default {
   bookSearch: function(query) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query);
+  },
+  getSaved: function() {
+    return axios.get("/api/books");
+  },
+  // Deletes the book with the given id
+  deleteSaved: function(id) {
+    return axios.delete("/api/books/" + id);
+  },
+  // Saves a book to the database
+  createSave: function(bookData) {
+    return axios.post("/api/books", bookData);
   }
 }
