@@ -6,5 +6,13 @@ import axios from "axios";
 export default {
   bookSearch: function(query) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query);
+  },
+
+  getBooks: ()=>{
+    return axios.get("api/books");
+  },
+  
+  saveBook: () =>{
+    return axios.post("/api/books", savedBooks)
   }
 }
