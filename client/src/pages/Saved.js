@@ -34,6 +34,10 @@ function Saved() {
                 {saved.map(book =>{
                     <SavedItem key = {book.id}>
                         <h2>{book.title}</h2>
+                        <h4>{book.author}</h4>
+                        <img src = {require(book.image)}></img>
+                        <p>{book.description}</p>
+                        <Link to = {book.link}>Link</Link>
                         <DeleteBtn onClick={() => deleteSaved(book._id)} />
                     </SavedItem>
                 })}
