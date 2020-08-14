@@ -3,7 +3,7 @@ import React from "react";
 function Nav () {
     return(
         <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Google Books Search</a>
+            <a className="navbar-brand" href="/">Google Books Search</a>
             <div id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item" id="home">

@@ -12,9 +12,9 @@ export default {
     return axios.get("api/books");
   },
   
-  saveBook: () =>{
-    return axios.post("/api/books", savedBooks)
-  },
+  // saveBook: () =>{
+  //   return axios.post("/api/books", savedBooks)
+  // },
   getSaved: function() {
     return axios.get("/api/books");
   },

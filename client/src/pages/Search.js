@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import Jumbotron from "../components/jumbotron/Jumbotron"
+import Nav from "../components/nav/Nav"
 
 const Books = () => {
     const [books, setBooks] = useState([])
@@ -31,43 +33,44 @@ const Books = () => {
         <div>
             <Nav />
             <Jumbotron />
-            <Container>
-                <Row>
-                    <Col size="md-12">
+            <div className = "container">
+                <div className = "row">
+                    <div className = "row md-12">
                         <form>
-                            <Container>
-                                <Row>
-                                    <Col size="xs-9 sm-10">
-                                        <Input
-                                            name="BookSearch"
-                                            value={bookSearch}
-                                            onChange={handleInputChange}
-                                            placeholder="Search For a Book"
-                                        />
-                                    </Col>
-                                    <Col size="xs-3 sm-2">
-                                        <Button
+                            <div className = "container">
+                                <div className = "row">
+                                    <div className = "col xs-9 sm-10">
+                                        <div className = "input"/>
+                                            <input className = "form-control" type="text"
+                                                name="BookSearch"
+                                                value={bookSearch}
+                                                onChange={handleInputChange}
+                                                placeholder="Search For a Book"
+                                            />
+                                    </div>
+                                    <div className = "col xs-3 sm-2">
+                                        <button
                                             onClick={handleFormSubmit}
                                             type="success"
                                             className="input-lg"
                                         >
                                             Search
-                        </Button>
-                                    </Col>
-                                </Row>
-                            </Container>
+                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col size="xs-12">
-                        {!recipes.length ? (
+                    </div>
+                </div>
+                <div>
+                    <div className = "col xs-12">
+                        {!books.length ? (
                             <h1 className="text-center">No Books to Display</h1>
                         ) : (
-                                <BookList>
+                                <ul>
                                     {books.map(book => {
                                         return (
-                                            <BookListItem
+                                            <li
                                                 key={book.title}
                                                 title={book.title}
                                                 author={book.author}
@@ -77,11 +80,11 @@ const Books = () => {
                                             />
                                         );
                                     })}
-                                </BookList>
+                                </ul>
                             )}
-                    </Col>
-                </Row>
-            </Container>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

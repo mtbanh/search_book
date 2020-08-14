@@ -11,5 +11,5 @@ export function SavedResults({ children }) {
 }
 
 export function SavedItem({ children }) {
-  return <li className="list-group-item">{children}</li>;
+  return (<li className="list-group-item">{children}</li>);
 }
