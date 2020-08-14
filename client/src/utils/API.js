@@ -7,6 +7,14 @@ export default {
   bookSearch: function(query) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query);
   },
+
+  getBooks: ()=>{
+    return axios.get("api/books");
+  },
+  
+  saveBook: () =>{
+    return axios.post("/api/books", savedBooks)
+  },
   getSaved: function() {
     return axios.get("/api/books");
   },
@@ -17,5 +25,6 @@ export default {
   // Saves a book to the database
   createSave: function(bookData) {
     return axios.post("/api/books", bookData);
+
   }
 }
