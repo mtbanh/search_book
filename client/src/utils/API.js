@@ -8,14 +8,11 @@ export default {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=title:" + query);
   },
 
-  getBook: ()=>{
-    return axios.get("api/books");
+  getBooks: ()=>{
+    return axios.get("/api/books");
   },
   getBook : (id) =>{
     return axios.get(`/api/books/${id}`)
-  },
-  saveBook: (bookData) =>{
-    return axios.post("/api/books", bookData)
   },
   // Saves a book to the database
   createSave: function(bookData) {
