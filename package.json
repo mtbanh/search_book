@@ -1,9 +1,10 @@
 {
-  "name": "mern",
+  "name": "book-search",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -13,6 +14,11 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdavis3333/book-search.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -21,10 +27,22 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "express": "^4.16.3",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.0",
+    "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "react": "^16.13.1",
-    "react-router-dom": "^5.2.0"
-  }
+    "react-router-dom": "^5.2.0",
+    "sequelize": "^6.3.4"
+  },
+  "bugs": {
+    "url": "https://github.com/jdavis3333/book-search/issues"
+  },
+  "homepage": "https://github.com/jdavis3333/book-search#readme"
 }
