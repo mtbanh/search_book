@@ -7,29 +7,36 @@ import Jumbotron from "../components/jumbotron/Jumbotron";
 import API from "../utils/API";
 
 function Saved() {
-  const [saved, setSaved] = useState({})
+  const [saved, setSaved] = useState([])
 
   useEffect(() => {
-    loadBooks();
+    console.log("something")
+    API.createSave({title: "Harry Potter", author: "author", description : "", picture: "", link: ""})
+    .then(res => {
+        console.log("yes")
+        setSaved(res.data);
+    })
+    .catch(err => console.log(err));
+    // loadBooks();
   }, [])
 
-  function loadBooks() {
-    API.getSaved()
-      .then(res =>
-        setSaved(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+//   function loadBooks() {
+//     API.getSaved()
+//       .then(res =>
+//         setSaved(res.data)
+//       )
+//       .catch(err => console.log(err));
+//   };
 
-  function deleteSaved(id) {
-    API.deleteSaved(id)
-      .then(res => loadBooks())
-      .catch(err => console.log(err));
-  }
+//   function deleteSaved(id) {
+//     API.deleteSaved(id)
+//       .then(res => loadBooks())
+//       .catch(err => console.log(err));
+//   }
 
   return (
         <div>
-          {console.log(SavedItem)}
+          {/* {console.log(saved)}
             <Nav />
             <Jumbotron />
             <SavedResults>
@@ -44,7 +51,7 @@ function Saved() {
                     // </SavedItem>
                     {console.log(book)}
                 })}
-            </SavedResults>
+            </SavedResults> */}
         </div>
     );
   }
