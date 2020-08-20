@@ -33,29 +33,29 @@ const Books = () => {
         <div>
             <Nav />
             <Jumbotron />
-            <div className = "container">
-                <div className = "row">
-                    <div className = "row md-12">
+            <div className="container">
+                <div className="row">
+                    <div className="row md-12">
                         <form>
-                            <div className = "container">
-                                <div className = "row">
-                                    <div className = "col xs-9 sm-10">
-                                        <div className = "input"/>
-                                            <input className = "form-control" type="text"
-                                                name="BookSearch"
-                                                value={bookSearch}
-                                                onChange={handleInputChange}
-                                                placeholder="Search For a Book"
-                                            />
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col xs-9 sm-10">
+                                        <div className="input" />
+                                        <input className="form-control" type="text"
+                                            name="BookSearch"
+                                            value={bookSearch}
+                                            onChange={handleInputChange}
+                                            placeholder="Search For a Book"
+                                        />
                                     </div>
-                                    <div className = "col xs-3 sm-2">
+                                    <div className="col xs-3 sm-2">
                                         <button
                                             onClick={handleFormSubmit}
                                             type="success"
                                             className="input-lg"
                                         >
                                             Search
-                        </button>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ const Books = () => {
                     </div>
                 </div>
                 <div>
-                    <div className = "col xs-12">
+                    <div className="col xs-12">
                         {!books.length ? (
                             <h1 className="text-center">No Books to Display</h1>
                         ) : (
