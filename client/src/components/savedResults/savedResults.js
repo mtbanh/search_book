@@ -10,6 +10,6 @@ export function SavedResults({ children }) {
   );
 }
 
-export function SavedItem({ children }) {
-  return (<li className="list-group-item">{children}</li>);
+export function SavedItem({ children, key }) {
+  return (<li key = {key} className="list-group-item">{children}</li>);
 }

@@ -10,48 +10,42 @@ function Saved() {
   const [saved, setSaved] = useState([])
 
   useEffect(() => {
-    console.log("something")
-    API.createSave({title: "Harry Potter", author: "author", description : "", picture: "", link: ""})
-    .then(res => {
-        console.log("yes")
-        setSaved(res.data);
-    })
-    .catch(err => console.log(err));
-    // loadBooks();
+    loadBooks();
   }, [])
 
-//   function loadBooks() {
-//     API.getSaved()
-//       .then(res =>
-//         setSaved(res.data)
-//       )
-//       .catch(err => console.log(err));
-//   };
+  function loadBooks() {
+    API.getBooks()
+      .then(res =>
+        setSaved(res.data)
+      )
+      .catch(err => console.log(err));
+  };
 
-//   function deleteSaved(id) {
-//     API.deleteSaved(id)
-//       .then(res => loadBooks())
-//       .catch(err => console.log(err));
-//   }
+  function deleteSaved(id) {
+    API.deleteBook(id)
+      .then(res => loadBooks())
+      .catch(err => console.log(err));
+  }
 
   return (
         <div>
-          {/* {console.log(saved)}
+          {console.log(saved)}
             <Nav />
             <Jumbotron />
             <SavedResults>
                 {saved.map(book =>{
-                    // <SavedItem key = {book.id}>
-                    //     <h2>{book.title}</h2>
-                    //     <h4>{book.author}</h4>
-                    //     <img src = {require(book.image)}></img>
-                    //     <p>{book.description}</p>
-                    //     <Link to = {book.link}>Link</Link>
-                    //     <DeleteBtn onClick={() => deleteSaved(book._id)} />
-                    // </SavedItem>
-                    {console.log(book)}
+                  return (
+                    <SavedItem key = {book.id}>
+                        <h2>{book.title}</h2>
+                        <h4>{book.author}</h4>
+                        <img src = {book.image} alt  = {book.title}></img>
+                        <p>{book.description}</p>
+                        <Link to = {book.link}>Link</Link>
+                        <DeleteBtn onClick={() => deleteSaved(book._id)} />
+                    </SavedItem>
+                  )
                 })}
-            </SavedResults> */}
+            </SavedResults>
         </div>
     );
   }
