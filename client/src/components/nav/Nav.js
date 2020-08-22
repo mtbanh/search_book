@@ -10,7 +10,7 @@ function Nav () {
                         <a className="nav-link" href="/"><button type="button" className="btn btn-success text-white">Search Books</button></a>
                     </li>
                     <li className="nav-item" id="saved">
-                        <a className="nav-link" href="/saved"><button type="button" className="btn btn-light text-white">Saved Books</button></a>
+                        <a className="nav-link" href="/saved"><button type="button" className="btn btn-danger text-white">Saved Books</button></a>
                     </li>
                 </ul>
             </div>

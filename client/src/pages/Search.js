@@ -57,7 +57,11 @@ const Books = () => {
             }
         }
         API.createSave(saveBookInfo)
-            .then(res => console.log(`saved!`))
+            .then(res => {
+                console.log(res)
+                // alert(`Book has been saved!`)
+                console.log(`saved!`)
+        })
             .catch(err => console.log(err))
     };
 
@@ -85,11 +89,12 @@ const Books = () => {
                                     required autofocus />
 
                             </div>
+                            <div></div>
                             <div className="col xs-3 sm-2">
                                 <button
                                     onClick={handleFormSubmit}
                                     type="submit"
-                                    className="input-lg"
+                                    className="btn btn-success text-white"
                                 >
                                     Search
                                 </button>
@@ -99,7 +104,7 @@ const Books = () => {
                     <div>
                         <div className="row">
                             {!books.length ? (
-                                <h1 className="text-center">No Books to Display</h1>
+                                <h3 className="text-center">No Books to Display</h3>
                             ) : (
                                     <div>
                                         {books.map(book => {

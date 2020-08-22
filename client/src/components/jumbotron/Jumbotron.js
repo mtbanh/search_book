@@ -7,7 +7,7 @@ function Jumbotron({ children }) {
       className="jumbotron"
     >
       {children}
-      <h1>(React) Google Books Search</h1>
+      <h1>Book Search</h1>
       <h4>Search for and Save Books of Interest</h4>
     </div>
   );
