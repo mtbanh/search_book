@@ -26,15 +26,12 @@ const Books = () => {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        console.log(bookSearch)
+        console.log(bookSearch);
         API.bookSearch(bookSearch.title)
-
             .then(res => {
-                //    const temp = [...books]
-                //    console.log(temp)
+           
                 console.log(res.data.items)
                 setBooks(res.data.items)
-                // console.log(temp)
             })
             .catch(err => console.log(err));
     };
