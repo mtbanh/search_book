@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const MONGODB_URI = "mongodb+srv://bootcampDB:<password>@cluster0.ummtp.mongodb.net/test"
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,7 +16,7 @@ app.use(routes);
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "FRAY*migh!trut3muc");
 
 // Start the API server
 app.listen(PORT, function() {
